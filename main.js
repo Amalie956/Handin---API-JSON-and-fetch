@@ -14,8 +14,8 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')
     .then(response => response.json())
     .then(movies => {
-        const h3 = document.querySelector("#exercise2")
-        h3.innerHTML = movies.length + " movies fetched";
+        const movies_6527 = document.querySelector("#exercise2")
+        movies_6527.innerHTML = movies.length + " movies fetched";
     });
 
 
@@ -24,8 +24,8 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
     .then(response => response.json()) // herefter konvertere man svaret til json
     .then(movies => { // herefter har vi objektet fra svaret og som vi så kan bruge
-        const h4 = document.querySelector("#exercise3")
-        h4.innerHTML = JSON.stringify(movies[0]);
+        const renderFirstMovie = document.querySelector("#exercise3")
+        renderFirstMovie.innerHTML = JSON.stringify(movies[0]);
     });
 
 
@@ -35,9 +35,9 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
     .then(response => response.json())
     .then(movies => {
         let firstMovie = movies[0]; // lavet en variabel og sættet lig med den første movies i arrayet
-        const h5 = document.querySelector("#exercise3_1")
-        let test = `${firstMovie.title} is a movie from ${firstMovie.year} that is ${firstMovie.running_times} seconds long. It has a rating of ${firstMovie.rating} out of ${firstMovie.votes} votes.`;
-        h5.innerHTML = test;
+        const renderLongText = document.querySelector("#exercise3_1")
+        let stringThatSays = `${firstMovie.title} is a movie from ${firstMovie.year} that is ${firstMovie.running_times} seconds long. It has a rating of ${firstMovie.rating} out of ${firstMovie.votes} votes.`;
+        renderLongText.innerHTML = stringThatSays;
     });
 
 
@@ -45,12 +45,12 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 //Now render all the movies in a list using ul and li
 const listOfUl = document.querySelector("#exercise4");
 fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
-    .then(response => response.json()) // herefter konvertere man svaret til json
-    .then(movies => { // herefter har vi objektet fra svaret og som vi så kan bruge
+    .then(response => response.json())
+    .then(movies => {
         for (let i = 0; i < movies.length; i++) {
-            let listOfLi = document.createElement("li");
-            listOfLi.innerHTML = movies[i].title;
-            listOfUl.appendChild(listOfLi);
+            let listOfMovies = document.createElement("li");
+            listOfMovies.innerHTML = movies[i].title;
+            listOfUl.appendChild(listOfMovies);
         }
     });
 
@@ -64,9 +64,9 @@ button.addEventListener('click', function (event) {
         .then(movies => {
                 for (let i = 0; i < movies.length; i++) {
                     if (movies[i].year >= 2014) {
-                        let listOfLi = document.createElement("li");
-                        listOfLi.innerHTML = movies[i].title + ", år: " + movies[i].year;
-                        listUnderButton.appendChild(listOfLi);
+                        let listOfMoviesClick = document.createElement("li");
+                        listOfMoviesClick.innerHTML = movies[i].title + ", år: " + movies[i].year;
+                        listUnderButton.appendChild(listOfMoviesClick);
                     }
                 }
             }
@@ -83,9 +83,9 @@ function inputElement(inputText) {
         .then(movies => {
             for (let i = 0; i < movies.length; i++) {
                 if (movies[i].title.match(inputText)) {
-                    let listOfLi = document.createElement("li");
-                    listOfLi.innerHTML = movies[i].title;
-                    listUnderInput.appendChild(listOfLi);
+                    let listOfMoviesInput = document.createElement("li");
+                    listOfMoviesInput.innerHTML = movies[i].title;
+                    listUnderInput.appendChild(listOfMoviesInput);
                 }
             }
         })
