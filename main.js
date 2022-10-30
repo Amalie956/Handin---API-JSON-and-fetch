@@ -21,7 +21,7 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 
 //Exercise 3 - level 1
 //Render the first movie in the movies array
-fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
+fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json') //Her sender man en request til api'en
     .then(response => response.json()) // herefter konvertere man svaret til json
     .then(movies => { // herefter har vi objektet fra svaret og som vi så kan bruge
         const renderFirstMovie = document.querySelector("#exercise3")
@@ -44,7 +44,7 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 //Exercise 4 - level 2
 //Now render all the movies in a list using ul and li
 const listOfUl = document.querySelector("#exercise4");
-fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
+fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')
     .then(response => response.json())
     .then(movies => {
         for (let i = 0; i < movies.length; i++) {
@@ -59,7 +59,7 @@ fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0a
 const button = document.querySelector("#submit");
 button.addEventListener('click', function (event) {
     const listUnderButton = document.querySelector("#exercise5_1");
-    fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
+    fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')
         .then(response => response.json())
         .then(movies => {
                 for (let i = 0; i < movies.length; i++) {
@@ -78,7 +78,7 @@ button.addEventListener('click', function (event) {
 function inputElement(inputText) {
     const listUnderInput = document.querySelector("#exercise6_1");
     listUnderInput.innerHTML = "";
-    fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')//Her sender man en request til api'en
+    fetch('https://gist.githubusercontent.com/pankaj28843/08f397fcea7c760a99206bcb0ae8d0a4/raw/02d8bc9ec9a73e463b13c44df77a87255def5ab9/movies.json')
         .then(response => response.json())
         .then(movies => {
             for (let i = 0; i < movies.length; i++) {
